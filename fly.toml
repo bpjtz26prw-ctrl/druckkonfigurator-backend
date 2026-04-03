@@ -1,0 +1,17 @@
+app = "druckkonfigurator-backend"
+primary_region = "fra"
+
+[build]
+  [build.args]
+    requirements_path = "requirements.txt"
+
+[[services]]
+  internal_port = 8000
+  protocol = "tcp"
+
+  [[services.ports]]
+    port = 80
+    handlers = ["http"]
+  [[services.ports]]
+    port = 443
+    handlers = ["tls", "http"]
